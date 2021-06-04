@@ -5,6 +5,7 @@ import SearchBox from './Components/SearchBox';
 import axios from 'axios'
 
 import React,{Component} from 'react'
+import SearchByCountry from './Components/SearchByCountry';
 
 class App extends Component{
 
@@ -57,7 +58,7 @@ render(){
       <header>
         <h1>News-API Client React</h1>
       </header>
-
+     
       <SearchBox onSearch={this.handleSearchBoxSearch}/>
       {this.state.errorMessage ? <div className='alert alert-danger mt-3'> {this.state.errorMessage}</div> : null}
       <NewsList isLoading={this.state.isLoading} articles = {this.state.articles} />

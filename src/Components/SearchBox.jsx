@@ -25,6 +25,13 @@ constructor(props){
                              Search
                     </button>
                     </div> 
+
+                    <div>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Search by Country</option>
+                        <option value="1">One</option>
+                    </select>
+                    </div>
             </form>
         )
     }
