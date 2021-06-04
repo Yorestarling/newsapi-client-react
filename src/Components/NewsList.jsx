@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 
-
-
-
-
 export default function NewsList(props){
     return(
         <div className='mt-3'>

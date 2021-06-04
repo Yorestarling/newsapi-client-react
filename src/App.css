@@ -1,13 +1,11 @@
 body{
     background-color: darkblue;
 }
-
 header{
     padding: 32px;
     text-align: center;
     color:darkgray;
 }
-
 
 .Loading{
     height: 100vh;
@@ -15,5 +13,4 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
