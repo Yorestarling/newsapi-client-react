@@ -20,43 +20,43 @@ class App extends Component{
       this.search(null)
     }
 
-  handleSearchBoxSearch = (value)=>{
-    this.search(value)  
-  }
+    handleSearchBoxSearch = (value)=>{
+      this.search(value)  
+    }
 
-search = (value) =>{
+ 
 
-  let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100" 
+    search = (value) =>{
+      let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100" 
 
-  if(value != null){
-    apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100&q"+value
-  }
+      if(value != null){
+        apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100&q="+ value
+      }
+      // console.log(apiURL)
+        axios.get(apiURL)
+        .then((res) => {
+            this.setState({
+                articles: res.data.articles,
+                isLoading: false
+            })
+        })
+      
+      .catch(err=> {
+        this.setState({
+          isLoading: false,
+          articles: [],
+          errorMessage: err.response.data.message
 
-  console.log(apiURL)
-
-  axios.get(apiURL)
-  .then((res) => {
-      this.setState({
-          articles: res.data.articles,
-          isLoading: false
+        })
       })
-  })
-
-  .catch(err=> {
-    this.setState({
-      isLoading: false,
-      articles: [],
-      errorMessage: err.response.data.message
-
-    })
-  })
-}
-
+    }
+    
 render(){
   return (
     <div className="App container">
       <header>
-        <h1>News-API Client React</h1>
+        <img src={'/News.gif'}/>
+        {/* <h1 className='mt-4'>News-API Client React</h1> */}
       </header>
      
       <SearchBox onSearch={this.handleSearchBoxSearch}/>
@@ -67,8 +67,11 @@ render(){
   }
 
 }
-
 export default App;
+
+
+
+
 
 
 
