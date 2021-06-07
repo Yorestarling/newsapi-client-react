@@ -15,7 +15,6 @@ class App extends Component{
 
         errorMessage: ' '
     }
-
     componentDidMount(){
       this.search(null)
     }
@@ -23,8 +22,6 @@ class App extends Component{
     handleSearchBoxSearch = (value)=>{
       this.search(value)  
     }
-
- 
 
     search = (value) =>{
       let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100" 
