@@ -12,9 +12,22 @@ header{
 
 .Loading{
     height: 100vh;
-    
     display: flex;
     justify-content: center;
     align-items: center;
 
+}
+
+
+.igCard{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+} 
+
+
+.cardbody{
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
 }

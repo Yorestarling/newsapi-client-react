@@ -48,6 +48,17 @@ constructor(props){
                     <select className="form-select" aria-label="Default select example">
                         <option selected>Search by Country</option>
                         <option value="1">United States</option>
+                        <option value="1">United Arab Emirates</option>
+                        <option value="1">Argentina</option>
+                        <option value="1">Austria</option>
+                        <option value="1">Australia</option>
+                        <option value="1">Belgium</option>
+                        <option value="1">Bulgaria</option>
+                        <option value="1">Brazil</option>
+                        <option value="1">Canada</option>
+                        <option value="1">Switzerland</option>
+                        <option value="1">China</option>
+                        <option value="1">Colombia</option>
                     </select>
                     </div>
             </form>
