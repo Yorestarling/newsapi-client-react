@@ -45,7 +45,7 @@ constructor(props){
                     </div> 
 
                     <div style={{width:'180px'}} className='d-grid gap-2 ms-3'>
-                    <select className="form-select" aria-label="Default select example">
+                    <select className="form-select" aria-label="Default select example"  >
                         <option selected>Search by Country</option>
                         <option value="1">United States</option>
                         <option value="1">United Arab Emirates</option>
@@ -60,6 +60,8 @@ constructor(props){
                         <option value="1">China</option>
                         <option value="1">Colombia</option>
                     </select>
+
+                    
                     </div>
             </form>
 

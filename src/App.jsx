@@ -4,43 +4,63 @@ import NewsList from './Components/NewsList';
 import SearchBox from './Components/SearchBox';
 import axios from 'axios'
 
-import React,{Component} from 'react'
+
+import { countries } from './Components/SearchByCountries';
 
 
-class App extends Component{
-
-      state = {
-        isLoading: true,
-        articles: [],
-        
-        errorMessage: ' '
+import React, { Component } from 'react'
 
 
+class App extends Component {
+
+  state = {
+    isLoading: true,
+    articles: [],
+   // countries: 'us',
+    errorMessage: '',
+    next: "",
+    previous: ""
+  }
+
+  componentDidMount() {
+    this.search(null)
+  }
+
+  // formatDate(date) {
+  //   var time = new Date(date);
+  //   var year = time.getFullYear();
+  //   var day = time.getDate();
+  //   var hour = time.getHours();
+  //   var minute = time.getMinutes();
+  //   var month = time.getMonth() + 1;
+  //   var composedTime = day + '/' + month + '/' + year + ' | ' + hour + ':' + (minute < 10 ? '0' + minute : minute);
+  //   return composedTime;
+  // }
+
+  handleSearchBoxSearch = (value) => {
+    this.search(value)
+  }
+
+  search = (value) => {
+    let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100"
+
+    if (value != null) {
+      apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=20&q=" + value
     }
-    componentDidMount(){
-      this.search(null)
-    }
 
-    handleSearchBoxSearch = (value)=>{
-      this.search(value)  
-    }
 
-    search = (value) =>{
-      let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100" 
+    
 
-      if(value != null){
-        apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100&q="+ value
-      }
-      // console.log(apiURL)
-        axios.get(apiURL)
-        .then((res) => {
-            this.setState({
-                articles: res.data.articles,
-                isLoading: false
-            })
+    // console.log(apiURL)
+    axios.get(apiURL)
+      .then((res) => {
+        this.setState({
+          articles: res.data.articles,
+          isLoading: false
         })
-      
-      .catch(err=> {
+      })
+
+      .catch(err => {
         this.setState({
           isLoading: false,
           articles: [],
@@ -48,45 +68,41 @@ class App extends Component{
 
         })
       })
-    }
-    
-render(){
-  return (
-    <div className="App container">
-      <header>
-        <img src={'/News.gif'}/>
-        {/* <h1 className='mt-4'>News-API Client React</h1> */}
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center mt-5">
-            <li class="page-item enable">
-              <a class="page-link" href="" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="">1</a></li>
-            <li class="page-item"><a class="page-link" href="">2</a></li>
-            <li class="page-item"><a class="page-link" href="">3</a></li>
-            <li class="page-item"><a class="page-link" href="">4</a></li>
-            <li class="page-item"><a class="page-link" href="">5</a></li>
-            <li class="page-item"><a class="page-link" href="">6</a></li>
+  }
 
-            <li class="page-item">
-              <a class="page-link" href="">Next</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-     
-      <SearchBox onSearch={this.handleSearchBoxSearch}/>
-      {this.state.errorMessage ? <div className='alert alert-danger mt-3'> {this.state.errorMessage}</div> : null}
-      <NewsList isLoading={this.state.isLoading} articles = {this.state.articles} />
+  // setCountry = (option) => {
+  //   this.setState({
+  //     country: option.value
+  //   });
+  // }
 
-      
-    </div>
 
-    
-   );
+
+  render() {
+    return (
+      <div className="App container">
+        <header>
+          <img src={'/News.gif'} />
+          {/* <h1 className='mt-4'>News-API Client React</h1> */}
+         
+
+        </header>
+
+        {/* <select className="form-select" options={countries} placeholder='Select Country' onChange={this.setCountry}  />
+         */}
+
+        <SearchBox onSearch={this.handleSearchBoxSearch} />
+        {this.state.errorMessage ? <div className='alert alert-danger mt-3'> {this.state.errorMessage}</div> : null}
+        <NewsList isLoading={this.state.isLoading} articles={this.state.articles}  />
+
+      </div>
+
+
+    );
   }
 
 }
+
 export default App;
 
 

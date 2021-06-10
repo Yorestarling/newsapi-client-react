@@ -1,5 +1,4 @@
 
-
 <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center mt-5">
             <li class="page-item enable">
