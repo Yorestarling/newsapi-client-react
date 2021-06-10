@@ -16,7 +16,6 @@ export default function NewsList(props){
         setPageNumber(selected);
       };
 
-
     return(
 
         <div className='mt-3'>
