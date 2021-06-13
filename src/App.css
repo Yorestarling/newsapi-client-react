@@ -1,13 +1,15 @@
 body{
-    background-color: darkblue;
+    background-color: #5271ff;
 }
 header{
     padding: 32px;
     text-align: center;
     color:rgb(255, 255, 255);
     font-family:fantasy;
-
-    
+    background-color: #000;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #fff;
 }
 .Loading{
     height: 100vh;
@@ -20,7 +22,7 @@ header{
 
 .SearchCate{
     height: 10vh;
-    width: 522vh; 
+    width: 565vh; 
     justify-content: center;
     display:block;
     align-items: center;
@@ -50,14 +52,17 @@ header{
     font-size: large;
   }
   .BtnPag a {
-    background-color: gray;
+    background-color: #000;
     padding: 8px;
     margin: 8px;
     border-radius: 5px;
-    border: 1px solid #000;
-    color: rgb(255, 255, 255);
+    border: 1px solid #fff;
+    color: #5271ff;
     cursor: pointer;
     
   }
 
+  button{
+      color: lightseagreen;
+  }
   

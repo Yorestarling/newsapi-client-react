@@ -96,7 +96,7 @@ class App extends Component {
     return (
       <div className="App container">
         <header>
-          <img src={'/News.gif'} />
+          <img src={'./MEGANEWS.png'} />
           {/* <h1 className='mt-4'>News-API Client React</h1> */}
           
 
