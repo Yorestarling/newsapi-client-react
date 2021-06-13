@@ -3,9 +3,12 @@ import './App.css';
 import NewsList from './Components/NewsList';
 import SearchBox from './Components/SearchBox';
 import axios from 'axios'
+import {Categories} from './Components/SearchByCategories'
+import {countries} from './Components/SearchByCountries'
+import Select from 'react-select';
 
 
-import { countries } from './Components/SearchByCountries';
+
 
 
 import React, { Component } from 'react'
@@ -17,6 +20,8 @@ class App extends Component {
     isLoading: true,
     articles: [],
    // countries: 'us',
+    category: '',
+    country:'us',
     errorMessage: '',
     next: "",
     previous: ""
@@ -54,7 +59,9 @@ class App extends Component {
       .then((res) => {
         this.setState({
           articles: res.data.articles,
-          isLoading: false
+          isLoading: false,
+          categoria: this.state.categori,
+          country: this.state.countri,
         })
       })
 
@@ -62,17 +69,26 @@ class App extends Component {
         this.setState({
           isLoading: false,
           articles: [],
+          categoria: this.state.categori,
           errorMessage: err.response.data.message
 
         })
       })
   }
 
-  // setCountry = (option) => {
-  //   this.setState({
-  //     country: option.value
-  //   });
-  // }
+
+
+  setCategorie = (option) => {
+    this.setState({
+      category: option.value
+    });
+  }
+
+  setCountrie = (option) => {
+    this.setState({
+      country: option.value
+    });
+  }
 
 
 
@@ -82,15 +98,29 @@ class App extends Component {
         <header>
           <img src={'/News.gif'} />
           {/* <h1 className='mt-4'>News-API Client React</h1> */}
-         
+          
 
         </header>
 
         {/* <select className="form-select" options={countries} placeholder='Select Country' onChange={this.setCountry}  />
          */}
-
+          
         <SearchBox onSearch={this.handleSearchBoxSearch} />
         {this.state.errorMessage ? <div className='alert alert-danger mt-3'> {this.state.errorMessage}</div> : null}
+        
+        <div className="SearchCate" >
+            <div className="row">
+              <div className="col-md-2">
+                <Select options={Categories} placeholder='Select by categories' onChange={this.setCategorie} className="mt-2"  /><div />
+              </div>
+              <div className="col-md-2">
+              <Select options={countries} placeholder='Select by contries' onChange={this.setCountrie} className="mt-2"  /><div />
+              </div>
+        </div>
+        </div>
+        
+          
+          
         <NewsList isLoading={this.state.isLoading} articles={this.state.articles}  />
 
       </div>

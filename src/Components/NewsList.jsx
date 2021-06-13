@@ -19,46 +19,46 @@ export default function NewsList(props){
     return(
 
         <div className='mt-3'>
-                <form className='d-flex'>
+                {/* <form className='d-flex'>
                  <div style={{width:'180px'}} className='d-grid gap-2 mb-2 '>
                      <button className='btn btn-secondary d-block' type='submit' value="General"> 
                              General
                      </button>
                      </div> 
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2' >
-                     <button className='btn btn-secondary d-block' type='submit' name='search' > 
+                     <button className='btn btn-secondary d-block' type='submit' name='Business'> 
                               Business
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit' value="Entertainment"> 
+                     <button className='btn btn-secondary d-block' type='submit' name='Entertainment'> 
                              Entertainment
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit' value="Health"> 
+                     <button className='btn btn-secondary d-block' type='submit' name='Health'> 
                               Health
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit' value="Science"> 
+                     <button className='btn btn-secondary d-block' type='submit' name='Science'> 
                               Science
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit' value="Sports"> 
+                     <button className='btn btn-secondary d-block' type='submit' name='Sports'> 
                              Sports
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit' value="Technology"> 
+                     <button className='btn btn-secondary d-block' type='submit' name='Technology'> 
                              Technology
                      </button>
                      </div>
 
-                </form>
+                </form> */}
                
-                <div className= "pagination justify-content-center mt-4">
+                <div className= "pagination justify-content-center mt-2">
                     <ReactPaginate color="primary" previousLabel={"Previous"} nextLabel={"Next"} pageCount={paginatedchange} 
                     onPageChange={changePage} containerClassName={"BtnPag"} previousLinkClassName={""}
                     nextLinkClassName={""} disabledClassName={"paginationDisabled"} activeClassName={"paginationActive"}
