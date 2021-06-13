@@ -42,14 +42,12 @@ class App extends Component {
   }
 
   search = (value) => {
-    let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=100"
+    let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=80"
 
     if (value != null) {
       apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=20&q=" + value
     }
 
-
-    
 
     // console.log(apiURL)
     axios.get(apiURL)

@@ -39,7 +39,7 @@ constructor(props){
                 <input type="text" className='form-control' placeholder='Search News...' name='search'/>
                 </div>
                     <div style={{width:'120px'}} className='d-grid gap-2 ms-3'>
-                    <button className='btn btn-success d-block' type='submit'> 
+                    <button className='btn btn-success d-block' type='submit' > 
                              Search
                     </button>
                     </div> 

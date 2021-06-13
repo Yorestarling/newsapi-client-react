@@ -21,37 +21,37 @@ export default function NewsList(props){
         <div className='mt-3'>
                 <form className='d-flex'>
                  <div style={{width:'180px'}} className='d-grid gap-2 mb-2 '>
-                     <button className='btn btn-secondary d-block' type='submit' > 
+                     <button className='btn btn-secondary d-block' type='submit' value="General"> 
                              General
                      </button>
                      </div> 
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2' >
-                     <button className='btn btn-secondary d-block' type='submit'> 
+                     <button className='btn btn-secondary d-block' type='submit' name='search' > 
                               Business
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit'> 
+                     <button className='btn btn-secondary d-block' type='submit' value="Entertainment"> 
                              Entertainment
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit'> 
+                     <button className='btn btn-secondary d-block' type='submit' value="Health"> 
                               Health
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit'> 
+                     <button className='btn btn-secondary d-block' type='submit' value="Science"> 
                               Science
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit'> 
+                     <button className='btn btn-secondary d-block' type='submit' value="Sports"> 
                              Sports
                      </button>
                      </div>
                      <div style={{width:'180px'}} className='d-grid gap-2 mb-2 ms-2'>
-                     <button className='btn btn-secondary d-block' type='submit'> 
+                     <button className='btn btn-secondary d-block' type='submit' value="Technology"> 
                              Technology
                      </button>
                      </div>
