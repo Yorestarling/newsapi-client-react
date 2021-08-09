@@ -10,6 +10,7 @@ header{
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #fff;
+    display:block;
 }
 .Loading{
     height: 100vh;
@@ -22,10 +23,10 @@ header{
 
 .SearchCate{
     height: 10vh;
-    width: 565vh; 
+
     justify-content: center;
-    display:block;
-    align-items: center;
+  
+
   
 }
 

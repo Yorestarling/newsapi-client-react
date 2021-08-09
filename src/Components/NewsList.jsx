@@ -82,15 +82,15 @@ export default function NewsList(props){
                             <div className="col-md-4">
                             
                             <div className='card mb-4'>
-                            <img src={item.urlToImage ?? '/default.jpg'} className="card-img-top igCard" alt={item.title}/>
+                            <img src={item.ulrToImage ?? '/default.jpg'} className="card-img-top igCard" alt={item.title}/>
                                 <div className="card-body cardbody" >
                                         <h5 className="card-title">{item.title}</h5>
                                         <p className="card-text">{item.content}</p>
-                                        <h6 className="card-author">{item.author}</h6>
+                                        <h6 className="card-author">{item.authorName}</h6>
                                                                   
                                 </div>   
                             <div className='card-footer'>
-                                         <a href={item.url} target='blank' className="btn btn-primary ">Show More....</a>
+                                         <a href={item.ulr} target='blank' className="btn btn-primary ">Show More....</a>
                                          {/* <p>{this.formatDate(item.publishedAt)}</p> */}
                                          <h6 className="card-publishedAt">Published At: {Date(item.publishedAt)}</h6>    
                             </div> 

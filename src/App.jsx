@@ -27,6 +27,10 @@ class App extends Component {
     previous: ""
   }
 
+
+  
+
+
   componentDidMount() {
     this.search(null)
   }
@@ -47,21 +51,21 @@ class App extends Component {
   }
 
   search = (value) => {
-    let apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=80"
+    let apiURL = "https://localhost:44320/api/Articles"
 
     if (value != null) {
-      apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1691f5df99424472b95c4ab2ec039e63&pageSize=20&q=" + value
-    }
+      apiURL = "https://localhost:44320/api/Articles/" + value
+   }
 
 
     // console.log(apiURL)
     axios.get(apiURL)
       .then((res) => {
         this.setState({
-          articles: res.data.articles,
+          articles: res.data,
           isLoading: false,
-          categoria: this.state.categori,
-          country: this.state.countri,
+          // categoria: this.state.categori,
+          // country: this.state.countri,
         })
       })
 
@@ -69,8 +73,8 @@ class App extends Component {
         this.setState({
           isLoading: false,
           articles: [],
-          categoria: this.state.categori,
-          errorMessage: err.response.data.message
+          // categoria: this.state.categori,
+          // errorMessage: err.response.data.message
 
         })
       })
@@ -78,17 +82,17 @@ class App extends Component {
 
 
 
-  setCategorie = (option) => {
-    this.setState({
-      category: option.value
-    });
-  }
+  // setCategorie = (option) => {
+  //   this.setState({
+  //     category: option.value
+  //   });
+  // }
 
-  setCountrie = (option) => {
-    this.setState({
-      country: option.value
-    });
-  }
+  // setCountrie = (option) => {
+  //   this.setState({
+  //     country: option.value
+  //   });
+  // }
 
 
 
@@ -109,12 +113,12 @@ class App extends Component {
         {this.state.errorMessage ? <div className='alert alert-danger mt-3'> {this.state.errorMessage}</div> : null}
         
         <div className="SearchCate" >
-            <div className="row">
-              <div className="col-md-2">
+            <div className="row ">
+              <div className="col-md-6">
                 <Select options={Categories} placeholder='Select by categories' onChange={this.setCategorie} className="mt-2"  /><div />
               </div>
-              <div className="col-md-2">
-              <Select options={countries} placeholder='Select by contries' onChange={this.setCountrie} className="mt-2"  /><div />
+              <div className="col-md-6">
+              <Select options={countries} placeholder='Select by countries' onChange={this.setCountrie} className="mt-2"  /><div />
               </div>
         </div>
         </div>
