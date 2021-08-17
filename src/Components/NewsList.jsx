@@ -92,7 +92,7 @@ export default function NewsList(props){
                             <div className='card-footer'>
                                          <a href={item.ulr} target='blank' className="btn btn-primary ">Show More....</a>
                                          {/* <p>{this.formatDate(item.publishedAt)}</p> */}
-                                         <h6 className="card-publishedAt">Published At: {Date(item.publishedAt)}</h6>    
+                                         <h6 className="card-publishedAt">Published At: {Date(item.publishedAt)}</h6>          
                             </div> 
                             </div>
                             </div>
